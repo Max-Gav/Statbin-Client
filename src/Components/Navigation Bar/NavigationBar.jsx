@@ -24,7 +24,7 @@ const NavigationBar = () => {
             <Nav.Link href="/login">Login</Nav.Link>
           </Nav>
 
-          <NavDropdown title="More" className="d-md-none d-flex text-white fw-bold ms-3" align={{md:"start"}}>
+          <NavDropdown title={<i class="fa-solid fa-bars fs-5"></i>} className="d-md-none d-flex text-white fw-bold ms-3" align={{md:"start"}} >
             <NavDropdown.Item href="/">Home</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="/signup">Sign up</NavDropdown.Item>
