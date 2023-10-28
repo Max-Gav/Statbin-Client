@@ -6,3 +6,57 @@
     background-color: #2f2f34;
     border-bottom: 1px solid rgb(96, 87, 87);
 } 
+
+.connect_button{
+    background-color: #18bd55;
+    border: 1px solid black;
+    color: #d0d0d5;
+    font-size: 0.9em;
+    font-family: Outfit-Medium ,Arial, Helvetica, sans-serif;
+    padding: 5px 14px 5px 12px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px #18bd55;
+}
+
+
+.connect_button:hover{
+    color: rgb(234, 232, 232);
+    box-shadow: 0 0 3px #18bd55;
+
+}
+
+.connect_button:active{
+    background-color: #12c453;
+    color: white;
+    box-shadow: 0 0 4px #18bd55;
+
+}
+
+.disconnect_button{
+    background-color: #b10505;
+    border: 1px solid black;
+    color: #d0d0d5;
+    font-size: 0.9em;
+    font-family: Outfit-Medium ,Arial, Helvetica, sans-serif;
+    padding: 5px 14px 5px 12px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px #d32626;
+}
+
+
+.disconnect_button:hover{
+    color: rgb(234, 232, 232);
+    box-shadow: 0 0 3px #d32626;
+
+}
+
+.disconnect_button:active{
+    background-color: rgb(185, 20, 20);
+    color: white;
+    box-shadow: 0 0 4px #d32626;
+
+}
+
+
+
+

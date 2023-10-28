@@ -1,40 +1,22 @@
 import React from "react";
-import { Container, Nav, Navbar, NavDropdown, Row, Col } from "react-bootstrap";
-import logo from "../../assets/images/logo.png";
+import { Container, Navbar } from "react-bootstrap";
 import styles from "./NavigationBar.module.css";
+import { Outlet } from "react-router-dom";
+import NavigationBarSpotifyDisconnectOrConnectButton from "./Navigation Bar Components/NavigationBarSpotifyDisconnectOrConnectButton";
+import NavigationBarLogoAndMenu from "./Navigation Bar Components/NavigationBarLogoAndMenu";
 
 const NavigationBar = () => {
-  console.log(styles);
-  return (
-    <Navbar
-      data-bs-theme="dark"
-      className={styles.navbar_container}
-    >
-      <Container >
-        <div className="col-md-6 ">
-          <Navbar.Brand href="/" className="d-flex gap-3">
-            <img src={logo} alt="" className={styles.small_logo} />
-            <span className="fs-5 fw-bold">STATBIN</span>
-          </Navbar.Brand>
-        </div>
-        <div className="col-md-6">
-          <Nav className="d-md-flex d-none justify-content-end gap-md-3 gap-1">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/signup">Sign up</Nav.Link>
-            <Nav.Link href="/login">Login</Nav.Link>
-          </Nav>
 
-          <NavDropdown title={<i class="fa-solid fa-bars fs-5"></i>} className="d-md-none d-flex text-white fw-bold ms-3" align={{md:"start"}} >
-            <NavDropdown.Item href="/">Home</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="/signup">Sign up</NavDropdown.Item>
-            <NavDropdown.Item href="/login">
-              Login
-            </NavDropdown.Item>
-          </NavDropdown>
-        </div>
-      </Container>
-    </Navbar>
+  return (
+    <>
+      <Navbar data-bs-theme="dark" className={styles.navbar_container}>
+        <Container>
+          <NavigationBarLogoAndMenu/>
+          <NavigationBarSpotifyDisconnectOrConnectButton/>
+        </Container>
+      </Navbar>
+      <Outlet />
+    </>
   );
 };
 
