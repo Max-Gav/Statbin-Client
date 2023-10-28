@@ -1,3 +1,46 @@
+/* Outfit Fonts */
+@font-face {
+  font-family: Outfit-Light;
+  src: url(../Fonts/Outfit/Outfit-Light.ttf);
+}
+@font-face {
+  font-family: Outfit-Regular;
+  src: url(../Fonts/Outfit/Outfit-Regular.ttf);
+}
+@font-face {
+  font-family: Outfit-Medium;
+  src: url(../Fonts/Outfit/Outfit-Medium.ttf);
+}
+@font-face {
+  font-family: Outfit-Black;
+  src: url(../Fonts/Outfit/Outfit-Black.ttf);
+}
+
+/* Heebo Fonts */
+@font-face {
+  font-family: Heebo-Light;
+  src: url(../Fonts/Heebo/Heebo-Light.ttf);
+}
+@font-face {
+  font-family: Heebo-Regular;
+  src: url(../Fonts/Heebo/Heebo-Regular.ttf);
+}
+@font-face {
+  font-family: Heebo-Medium;
+  src: url(../Fonts/Heebo/Heebo-Medium.ttf);
+}
+@font-face {
+  font-family: Heebo-Black;
+  src: url(../Fonts/Heebo/Heebo-Black.ttf);
+}
+
+
 .dropdown-toggle::after {
     display: none !important; 
   }
+
+
+
+*{
+  font-family: Outfit-Regular, Heebo-Regular, Helvetica, sans-serif;
+}
