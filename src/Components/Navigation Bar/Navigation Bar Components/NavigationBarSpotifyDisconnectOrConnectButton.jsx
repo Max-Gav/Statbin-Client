@@ -1,21 +1,17 @@
 import React, { useContext } from "react";
 import { Nav } from "react-bootstrap";
 import styles from "../NavigationBar.module.css";
-import disconnectFromSpotify from "../../../API Requests/Spotify Authentication and Tokens API Requests/disconnectFromSpotify";
-import connectToSpotify from "../../../API Requests/Spotify Authentication and Tokens API Requests/connectToSpotify";
-import { AccessTokenContext } from "../../../App";
-import { useNavigate } from "react-router-dom";
+import disconnectFromSpotify from "../../../API Requests/Spotify Connect Requests/disconnectFromSpotify";
+import connectToSpotify from "../../../API Requests/Spotify Connect Requests/connectToSpotify";
+import { IsLoggedInContext } from "../../../AppContext";
 
 const NavigationBarSpotifyDisconnectOrConnectButton = () => {
-    const { accessToken, setAccessToken } = useContext(AccessTokenContext);
-    const navigate = useNavigate();
+  const { isLoggedIn, setIsLoggedIn } = useContext(IsLoggedInContext);
 
   return (
     <div className="col-md-6">
-
       {/* BUTTONS */}
-      {accessToken ? (
-
+      {isLoggedIn ? (
         //Disconnect Button
         <Nav className="d-md-flex justify-content-end align-items-center gap-md-3 gap-1">
           <button
@@ -24,8 +20,7 @@ const NavigationBarSpotifyDisconnectOrConnectButton = () => {
               " d-flex align-items-center justify-content-between gap-2"
             }
             onClick={() => {
-              disconnectFromSpotify(setAccessToken);
-              navigate('/');
+              disconnectFromSpotify(setIsLoggedIn);
             }}
           >
             <span>Disconnect</span>
@@ -33,7 +28,6 @@ const NavigationBarSpotifyDisconnectOrConnectButton = () => {
           </button>
         </Nav>
       ) : (
-
         //Connect Button
         <Nav className="d-md-flex justify-content-end align-items-center gap-md-3 gap-1">
           <button
@@ -41,13 +35,16 @@ const NavigationBarSpotifyDisconnectOrConnectButton = () => {
               styles.connect_button +
               " d-flex align-items-center justify-content-between gap-2"
             }
-            onClick={connectToSpotify}
+            onClick={() => {
+              connectToSpotify();
+            }}
           >
             <span>Connect</span>
             <i className="fa-brands fa-spotify"></i>
           </button>
         </Nav>
       )}
+
     </div>
   );
 };

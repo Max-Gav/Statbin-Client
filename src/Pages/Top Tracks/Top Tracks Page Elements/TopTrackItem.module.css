@@ -1,0 +1,37 @@
+.track_image_container {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    filter: blur(0.25);
+}
+
+.track_image_container img{
+    opacity: 1;
+    z-index: 2;
+    transition: opacity 0.2s linear;
+    position: absolute;
+}
+
+
+.track_image_container .image_shadow{
+    z-index: 1;
+    filter: blur(10px) saturate(5);
+}
+
+.track_image_container button{
+    display: none;
+    z-index: 1;
+}
+
+.track_image_container:hover img{
+    opacity: 0.5;
+}
+
+.track_image_container:hover button{
+    z-index: 3;
+    display: inline;
+}
+
+

@@ -1,0 +1,114 @@
+
+
+
+.play_button{
+    background-color: #5e5e5f;
+    border: 1px solid black;
+    color: #d0d0d5;
+    font-size: 0.9em;
+    font-family: Outfit-Medium ,Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 2px #a8a5b6;
+
+}
+
+
+.play_button:hover{
+    color: rgb(234, 232, 232);
+    box-shadow: 0 0 3px #a8a5b6;
+
+}
+
+.play_button:active{
+    background-color: #82808b;
+    color: white;
+    box-shadow: 0 0 4px #a8a5b6;
+
+}
+
+.pause_button{
+    background-color: #9485ec;
+    border: 1px solid black;
+    color: #d0d0d5;
+    font-size: 0.9em;
+    font-family: Outfit-Medium ,Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 2px #9485ec;
+    animation: borderAnimation 4s forwards;
+
+}
+
+
+.pause_button:hover{
+    color: rgb(234, 232, 232);
+    box-shadow: 0 0 3px #9485ec;
+
+}
+
+.pause_button:active{
+    background-color: #6c61ac;
+    color: white;
+    box-shadow: 0 0 4px #9485ec;
+
+}
+
+
+.no_preview_button{
+    background-color: #970000;
+    border: 1px solid black;
+    color: #d0d0d5;
+    font-size: 0.9em;
+    font-family: Outfit-Medium ,Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 2px #ec250b;
+    position: relative;
+    display: inline-block;
+}
+
+
+
+.statbin_button{
+    background-color: #000000;
+    border: 1px solid black;
+    font-size: 0.9em;
+    font-family: Outfit-Medium ,Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 2px #18bd55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #12c453;
+}
+
+
+.statbin_button:hover{
+    color: #18bd55;
+    box-shadow: 0 0 3px #18bd55;
+
+}
+
+.statbin_button:active{
+    background-color: #222222;
+    color: #11f765;
+    box-shadow: 0 0 4px #18bd55;
+
+}
+
+.spotify_button{
+    background-color: #18bd55;
+    border: 1px solid black;
+    color: black;
+    font-size: 0.9em;
+    font-family: Outfit-Medium ,Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 2px #18bd55;
+}
+
+
+.spotify_button:hover{
+    color: rgb(41, 39, 39);
+    box-shadow: 0 0 3px #18bd55;
+
+}
+
+.spotify_button:active{
+    background-color: #12c453;
+    color: rgb(65, 61, 61);
+    box-shadow: 0 0 4px #18bd55;
+
+}

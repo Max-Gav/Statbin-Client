@@ -1,30 +1,24 @@
-import React, { useContext, useEffect, useState } from "react";
-import getRecentlyPlayed from "../../API Requests/Spotify Player API Requests/getRecentlyPlayed";
-import { AccessTokenContext } from "../../App";
-import RecentlyPlayedPageTitle from "./Recently Played Page Elements/RecentlyPlayedPageTitle";
-import RecentlyPlayedPageItemsLoader from "./Recently Played Page Elements/RecentlyPlayedPageItemsLoader";
+import React, { useContext } from "react";
+import { IsLoggedInContext } from "../../AppContext";
+import ConnectButton from "../../Components/General Page Components/Connect Button/ConnectButton";
+import PageTitle from "../../Components/General Page Components/PageTitle";
+import PageItemsLoader from "../../Components/General Page Components/PageItemsLoader";
+import RecentlyPlayedItem from "./Recently Played Page Elements/Recently Played Item/RecentlyPlayedItem"
+import useRecentlyPlayed from "../../hooks/useRecentlyPlayedItems";
 
 const RecentlyPlayedPage = () => {
-  const [data, setData] = useState(null);
-  const [tracks, setTracks] = useState([]);
-  const { accessToken } = useContext(AccessTokenContext);
+  const {items} = useRecentlyPlayed();
+  const { isLoggedIn } = useContext(IsLoggedInContext);
 
-  useEffect(() => {
-    getRecentlyPlayed(accessToken, setData);
-  }, [accessToken]);
-
-  useEffect(() => {
-    if (data) {
-      setTracks([...tracks,...data.items]);
-      
-    }
-  }, [data]);
 
   return (
     <div className="container d-flex flex-column gap-3 my-3">
-      <RecentlyPlayedPageTitle/>
-      <RecentlyPlayedPageItemsLoader tracks={tracks}/>
-
+      <PageTitle title={"Recently Played"} />
+      {isLoggedIn ? (
+        <PageItemsLoader items={items} itemComponent={RecentlyPlayedItem}/>
+      ) : (
+        <ConnectButton />
+      )}
     </div>
   );
 };

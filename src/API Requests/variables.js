@@ -1,0 +1,1 @@
+export const SERVER_CONNECTION = "http://localhost:3001";
